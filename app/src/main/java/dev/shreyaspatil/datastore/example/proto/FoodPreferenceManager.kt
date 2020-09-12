@@ -76,26 +76,6 @@ class FoodPreferenceManager(context: Context) {
                 .build()
         }
     }
-    suspend fun updateUserFoodPreference(type: FoodType?, taste: FoodTaste?) {
-        val foodType = when (type) {
-            FoodType.VEG -> FoodPreferences.FoodType.TYPE_VEG
-            FoodType.NON_VEG -> FoodPreferences.FoodType.TYPE_NON_VEG
-            null -> FoodPreferences.FoodType.TYPE_UNSPECIFIED
-        }
-
-        val foodTaste = when (taste) {
-            FoodTaste.SWEET -> FoodPreferences.FoodTaste.TASTE_SWEET
-            FoodTaste.SPICY -> FoodPreferences.FoodTaste.TASTE_SPICY
-            null -> FoodPreferences.FoodTaste.TASTE_UNSPECIFIED
-        }
-
-        dataStore.updateData { preferences ->
-            preferences.toBuilder()
-                .setType(foodType)
-                .setTaste(foodTaste)
-                .build()
-        }
-    }
 
     companion object {
         const val TAG = "FoodPreferenceManager"

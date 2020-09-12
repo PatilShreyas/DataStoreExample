@@ -101,11 +101,15 @@ class ProtoDatastoreActivity : AppCompatActivity() {
 
 
     private fun updateViews(type: FoodType?, taste: FoodTaste?) {
-        veg.isChecked = (type == FoodType.VEG)
-        nonVeg.isChecked = (type == FoodType.VEG)
+        when (type) {
+            FoodType.VEG -> veg.isChecked = true
+            FoodType.NON_VEG -> nonVeg.isChecked = true
+        }
 
-        sweet.isChecked = (taste == FoodTaste.SWEET)
-        spicy.isChecked = (taste == FoodTaste.SPICY)
+        when (taste) {
+            FoodTaste.SWEET -> sweet.isChecked = true
+            FoodTaste.SPICY -> spicy.isChecked = true
+        }
     }
 }
 
