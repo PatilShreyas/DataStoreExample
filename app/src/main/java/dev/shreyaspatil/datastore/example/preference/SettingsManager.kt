@@ -1,4 +1,4 @@
-package dev.shreyaspatil.datastore.example
+package dev.shreyaspatil.datastore.example.preference
 
 import android.content.Context
 import androidx.datastore.preferences.createDataStore

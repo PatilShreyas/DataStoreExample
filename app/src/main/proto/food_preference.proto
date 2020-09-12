@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "dev.shreyaspatil.datastore.example.proto";
+option java_multiple_files = true;
+
+message FoodPreferences {
+    enum FoodType {
+        TYPE_UNSPECIFIED = 0;
+        TYPE_VEG = 1;
+        TYPE_NON_VEG = 2;
+    }
+
+    enum FoodTaste {
+        TASTE_UNSPECIFIED = 0;
+        TASTE_SWEET = 1;
+        TASTE_SPICY = 2;
+    }
+
+    FoodType type = 1;
+    FoodTaste taste = 2;
+}
